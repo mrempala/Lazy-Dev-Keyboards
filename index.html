@@ -39,6 +39,7 @@
       font-weight: 600;
     }
     .hero {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -46,6 +47,49 @@
       padding: 4rem 2rem;
       background: linear-gradient(135deg, #6366f1, #8b5cf6);
       color: white;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.2;
+      animation: float 10s infinite ease-in-out;
+    }
+    .hero-shape1 {
+      width: 300px;
+      height: 300px;
+      background: #ffffff;
+      top: 10%;
+      left: 5%;
+      animation-delay: 0s;
+    }
+    .hero-shape2 {
+      width: 250px;
+      height: 250px;
+      background: #e0e7ff;
+      bottom: 15%;
+      right: 10%;
+      animation-delay: 5s;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) translateX(0); }
+      25% { transform: translateY(-20px) translateX(10px); }
+      50% { transform: translateY(0) translateX(20px); }
+      75% { transform: translateY(20px) translateX(10px); }
+      100% { transform: translateY(0) translateX(0); }
+    }
+    .hero h2, .hero p, .hero .cta-button {
+      position: relative;
+      z-index: 1;
     }
     .hero h2 {
       font-size: 2.5rem;
@@ -91,7 +135,7 @@
 <body>
   <header>
     <div class="logo-container">
-      <img src="LDK-logo.png" alt="Lazy Dev Logo">
+      <img src="logo.png" alt="Lazy Dev Logo">
       <h1>Lazy Dev Keyboards</h1>
     </div>
     <nav>
@@ -101,6 +145,10 @@
   </header>
 
   <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-shape hero-shape1"></div>
+      <div class="hero-shape hero-shape2"></div>
+    </div>
     <h2>Next-Gen Keyboards Powered by AI</h2>
     <p>Are you bad at your job? Is it a nice day out? Or are you under the weather? We got the perfect product for you! With the power of AI, you can now go to the beach and let some junior dev fix the tech debt later.</p>
     <a href="#" class="cta-button">Pre-Order Now</a>
@@ -109,7 +157,7 @@
   <section class="features" id="features">
     <div class="feature">
       <h3>Unlimited AI Slop Generation</h3>
-      <p>AI that hasn't learned shit, but will still generate code like output that your boss will be fooled by. Works 60% of the time, every time.</p>
+      <p>AI that hasn't learned shit, but will still generate code-like output that your boss will be fooled by. Works 60% of the time, every time.</p>
     </div>
     <div class="feature">
       <h3>Adaptive Backlighting</h3>
