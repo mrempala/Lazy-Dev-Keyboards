@@ -1,3 +1,3 @@
 # Lazy-Dev-Keyboards
 
-https://mrempala.github.io/#
+https://mrempala.github.io/
